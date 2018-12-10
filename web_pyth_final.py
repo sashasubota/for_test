@@ -15,7 +15,7 @@ class HttpProcessor(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write("Allow, this is:" + host)
         self.wfile.write("<body><p>Commit hash:</p>"+str(commit))
-        #self.wfile.write("<body><p>This is a test.</p>")        
+        self.wfile.write("<body><p>This is a test.</p>")
 
 serv = HTTPServer(("0.0.0.0",8080),HttpProcessor)
 serv.serve_forever()
