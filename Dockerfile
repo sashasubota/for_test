@@ -10,7 +10,9 @@ COPY . /app
 # Install python
 RUN apt-get update
 RUN apt-get install -y python python-dev python-distribute python-pip
+RUN apt-get install -y git
 RUN pip install gitpython
+RUN pip install PyGithub
 
 # Make port 80 available to the world outside this container
 EXPOSE 80
