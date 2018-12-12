@@ -18,7 +18,10 @@ RUN pip install PyGithub
 EXPOSE 80
 
 # Define environment variable
+ARG GIT_COMMIT
+ENV GIT_COMMIT ${GIT_COMMIT}
 ENV CONTAINER_TIMEZONE TZ=Europe/Kiev
+
 
 # Run app.py when the container launches
 CMD ["python", "web_pyth_final.py"]

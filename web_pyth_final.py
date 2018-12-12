@@ -1,14 +1,10 @@
 from BaseHTTPServer import BaseHTTPRequestHandler,HTTPServer
-from github import Github
-import socket 
+#from github import Github
+import os, socket 
 
 #import git - just for local repo
 host = socket.gethostname()
-#repo = git.Repo("github.com/sashasubota/for_test")
-#commit = repo.commit('HEAD')
-g = Github('6903782c3534e8ce6c2f459736fcafe25bccb0a9')
-branch = g.get_repo("sashasubota/for_test").get_branch("master")
-commit = branch.commit
+commit = os.environ['GIT_COMMIT']
 
 class HttpProcessor(BaseHTTPRequestHandler):
     
